@@ -86,7 +86,7 @@ def draw_frame(canv):
     hr.GetXaxis().SetMoreLogLabels()
     hr.GetXaxis().SetNoExponent()
     # format y axis
-    hr.SetYTitle("95% CL on #frac{#sigma_{h_{125}}}{#sigma_{SM}}B(h_{125}#rightarrow aa)");
+    hr.SetYTitle("95% CL upper limit on #frac{#sigma_{h_{125}}}{#sigma_{SM}}B(h_{125}#rightarrow aa)");
     hr.GetYaxis().SetLabelFont(42)
     hr.GetYaxis().SetTitleSize(0.05)
     hr.GetYaxis().SetTitleOffset(1.2)
@@ -138,11 +138,11 @@ if __name__ == '__main__':
             graph.Draw(style+'same')
         graphs.append(graph) # so ROOT doesn't delete it
     legend = ROOT.TLegend(0.627, 0.12, 0.95, 0.572)
-    legend.SetBorderSize(1)
-    legend.SetFillStyle (1001)
-    # legend.SetTextSize(0.019)
-    legend.SetFillColor(0)
-    legend.SetHeader("Observed exclusion 95% CL") 
+    legend.SetBorderSize(0)
+    legend.SetFillStyle(0)
+    # legend.SetTextSize(0.05)
+    legend.SetFillColorAlpha(0, 1.)
+    # legend.SetHeader("Observed exclusion 95% CL") 
     for graph, dataset in zip(graphs, datasets):
         legend.AddEntry(graph, dataset.legend, dataset.style)
     legend.Draw()
