@@ -4,27 +4,24 @@ import ROOT
 
 # nice_colours = ['#8dd3c7','#ffffb3','#bebada','#fb8072','#80b1d3','#fdb462','#b3de69','#fccde5'] # light
 # nice_colours = ['#e41a1c','#377eb8','#4daf4a','#984ea3','#ff7f00','#ffff33','#a65628','#f781bf'] # medium
-# nice_colours = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a','#ffff99','#b15928'] # paired, 12 entries
-nice_colours = ['#7fc97f','#beaed4','#fdc086','#ffff99','#386cb0','#f0027f','#bf5b17','#666666'] # dark
+nice_colours = ['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a','#ffff99','#b15928'] # paired, 12 entries
+# nice_colours = ['#7fc97f','#beaed4','#fdc086','#ffff99','#386cb0','#f0027f','#bf5b17','#666666'] # dark
 colours = [ROOT.TColor.GetColor(hex) for hex in nice_colours]
 
 Dataset = namedtuple('Dataset', ['csv', 'legend', 'style'])
 
 datasets = [
+    Dataset('csv/ATL_comb.csv', 'h(125) (ATLAS)', 'l'),
     Dataset('csv/HIG-17-031-observed.csv', 'h(125) (CMS)', 'l'),
-    Dataset('csv/HIG-17-027-observed.csv', 'A/H #rightarrow t#bar{t} (CMS)', 'f'),
+    Dataset('csv/ATL_ditau.csv', 'A/H #rightarrow #tau#tau (ATLAS)', 'f'),
     Dataset('csv/HIG-17-020-observed_new.csv', 'A/H #rightarrow #tau#tau (CMS)', 'f'),
-    Dataset('csv/HIG-18-023-observed.csv', 'A #rightarrow Zh (CMS)', 'f'),
-    Dataset('csv/HIG-17-033-observed.csv', 'H #rightarrow WW (CMS)', 'f'),
-    Dataset('csv/ATL-HIG-2016-11-observed.csv', 'H^{+} #rightarrow #tau#nu (ATLAS)', 'f'),
+    # Dataset('csv/HIG-18-023-observed.csv', 'A #rightarrow Zh (CMS)', 'f'),
+    # Dataset('csv/ATL-HIG-2016-11-observed.csv', 'H^{+} #rightarrow #tau#nu (ATLAS)', 'f'),
     Dataset('csv/ATL-HDBS-2018-58-observed.csv', 'HH (ATLAS)', 'f'),
+    Dataset('csv/HIG-17-033-observed.csv', 'H #rightarrow WW (CMS)', 'f'),
     Dataset('csv/ATL-HIGG-2017-04-observed.csv', 'H^{+} #rightarrow tb (ATLAS)', 'f'),
-    # Dataset('csv/HIG-17-031-observed.csv', '#splitline{h(125)}{EPJC 79 (2019) 421}', 'l'),
-    # Dataset('csv/HIG-17-027-observed.csv', '#splitline{A/H #rightarrow tt}{CMS-PAS-HIG-17-027}', 'f'),
-    # Dataset('csv/HIG-17-020-observed_new.csv', '#splitline{A/H/h #rightarrow #tau#tau}{JHEP 1809 (2018) 007}', 'f'),
-    # Dataset('csv/HIG-18-023-observed.csv', '#splitline{A #rightarrow Zh}{arxiv:1910.11634}', 'f'),
-    # Dataset('csv/HIG-17-033-observed.csv', '#splitline{H #rightarrow WW}{CMS-PAS-HIG-17-033}', 'f'),
-    # # Dataset('csv/HIG-17-002-observed.csv', '#splitline{H #rightarrow hh (bb#tau#tau)}{PLB 778 (2018) 101}', 'f'),
+    Dataset('csv/HIG-17-027-observed.csv', 'A/H #rightarrow t#bar{t} (CMS)', 'f'),
+
 ]
 
 
@@ -100,11 +97,11 @@ if __name__ == '__main__':
         for style in dataset.style:
             graph.Draw(style+'same')
         graphs.append(graph) # so ROOT doesn't delete it
-    legend = ROOT.TLegend(0.627, 0.12, 0.95, 0.572)
-    legend.SetBorderSize(1)
-    legend.SetFillStyle (1001)
+    legend = ROOT.TLegend(0.66, 0.14, 0.95, 0.72)
+    legend.SetBorderSize(0)
+    legend.SetFillStyle (0)
     # legend.SetTextSize(0.019)
-    legend.SetFillColor(0)
+    legend.SetFillColorAlpha(0, 1.)
     legend.SetHeader("Observed exclusion 95% CL") 
     for graph, dataset in zip(graphs, datasets):
         legend.AddEntry(graph, dataset.legend, dataset.style)

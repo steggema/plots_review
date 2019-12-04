@@ -16,11 +16,15 @@ Dataset = namedtuple('Dataset', ['csv', 'legend', 'style', 'factors'])
 
 datasets = [
     Dataset('2hdms/sm_obs.txt', 'h_{125} #rightarrow undetected (CMS)', 'l', []),
+    Dataset('2hdms/atlas_mmmm_obs.txt', 'h_{125} #rightarrow aa #rightarrow #mu#mu#mu#mu (ATLAS)', 'f', [48610., 'mm', 'mm']),
     Dataset('2hdms/mmmm_obs.txt', 'h_{125} #rightarrow aa #rightarrow #mu#mu#mu#mu (CMS)', 'f', [54620., 'mm', 'mm']),
     Dataset('2hdms/bbtt_obs.txt', 'h_{125} #rightarrow aa #rightarrow bb#tau#tau (CMS)', 'f', [200., 'bb', 'tt']),
     # Dataset('2hdms/mmtt_obs.txt', 'h_{125} #rightarrow aa #rightarrow #mu#mu#tau#tau (CMS)', 'f', [2000., 'mm', 'tt']),
+    Dataset('2hdms/atlas_bbmm_obs.txt', 'h_{125} #rightarrow aa #rightarrow #mu#mubb (ATLAS)', 'f', [2., 'mm', 'bb']),
     Dataset('2hdms/mmbb_obs.txt', 'h_{125} #rightarrow aa #rightarrow #mu#mubb (CMS)', 'f', [2., 'mm', 'bb']),
+    Dataset('2hdms/atlas_mmtt_obs.txt', 'h_{125} #rightarrow aa #rightarrow #mu#mu#tau#tau (ATLAS)', 'f', ['tt', 'tt']),
     Dataset('2hdms/tttt_obs.txt', 'h_{125} #rightarrow aa #rightarrow #tau#tau#tau#tau (CMS)', 'f', ['tt', 'tt']),
+    # Dataset('2hdms/atlas_bbbb_obs.txt', 'h_{125} #rightarrow aa #rightarrow bbbb (ATLAS)', 'f', ['bb', 'bb']),
 ]
 
 class BRProvider:
@@ -137,12 +141,12 @@ if __name__ == '__main__':
         for style in dataset.style:
             graph.Draw(style+'same')
         graphs.append(graph) # so ROOT doesn't delete it
-    legend = ROOT.TLegend(0.627, 0.12, 0.95, 0.572)
+    legend = ROOT.TLegend(0.6, 0.12, 0.93, 0.7)
     legend.SetBorderSize(0)
     legend.SetFillStyle(0)
     # legend.SetTextSize(0.05)
     legend.SetFillColorAlpha(0, 1.)
-    # legend.SetHeader("Observed exclusion 95% CL") 
+    legend.SetHeader("2HDM+S Type 2, tan#beta = 2") 
     for graph, dataset in zip(graphs, datasets):
         legend.AddEntry(graph, dataset.legend, dataset.style)
     legend.Draw()
