@@ -11,13 +11,13 @@ colours = [ROOT.TColor.GetColor(hex) for hex in nice_colours]
 Dataset = namedtuple('Dataset', ['csv', 'legend', 'style'])
 
 datasets = [
-    Dataset('csv/ATL_comb.csv', 'h(125) (ATLAS)', 'l'),
-    Dataset('csv/HIG-17-031-observed.csv', 'h(125) (CMS)', 'l'),
+    Dataset('csv/ATL_comb.csv', 'h_{125} (ATLAS)', 'l'),
+    Dataset('csv/HIG-17-031-observed.csv', 'h_{125} (CMS)', 'l'),
     Dataset('csv/ATL_ditau.csv', 'A/H #rightarrow #tau#tau (ATLAS)', 'f'),
     Dataset('csv/HIG-17-020-observed_new.csv', 'A/H #rightarrow #tau#tau (CMS)', 'f'),
     # Dataset('csv/HIG-18-023-observed.csv', 'A #rightarrow Zh (CMS)', 'f'),
     # Dataset('csv/ATL-HIG-2016-11-observed.csv', 'H^{+} #rightarrow #tau#nu (ATLAS)', 'f'),
-    Dataset('csv/ATL-HDBS-2018-58-observed.csv', 'HH (ATLAS)', 'f'),
+    Dataset('csv/ATL-HDBS-2018-58-observed.csv', 'H #rightarrow hh (ATLAS)', 'f'),
     Dataset('csv/HIG-17-033-observed.csv', 'H #rightarrow WW (CMS)', 'f'),
     Dataset('csv/ATL-HIGG-2017-04-observed.csv', 'H^{+} #rightarrow tb (ATLAS)', 'f'),
     Dataset('csv/HIG-17-027-observed.csv', 'A/H #rightarrow t#bar{t} (CMS)', 'f'),
