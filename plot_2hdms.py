@@ -139,8 +139,10 @@ if __name__ == '__main__':
         graph = get_graph(dataset.csv, brs, dataset.factors)
         graph_style(graph, i, dataset.style)
         for style in dataset.style:
-            graph.Draw(style+'same')
+            if i > 0:
+                graph.Draw(style+'same')
         graphs.append(graph) # so ROOT doesn't delete it
+    graphs[0].Draw(datasets[0].style+'same')
     legend = ROOT.TLegend(0.6, 0.12, 0.93, 0.7)
     legend.SetBorderSize(0)
     legend.SetFillStyle(0)

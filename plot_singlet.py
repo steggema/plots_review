@@ -11,10 +11,10 @@ colours = [ROOT.TColor.GetColor(hex) for hex in nice_colours]
 Dataset = namedtuple('Dataset', ['csv', 'legend', 'style'])
 
 datasets = [
-    Dataset('plotonly/higgs_signal.csv', 'h(125)', 'l'),
+    Dataset('plotonly/higgs_signal.csv', 'h_{125} couplings', 'l'),
     Dataset('plotonly/wmass.csv', 'W mass', 'l'),
     Dataset('plotonly/perturbativity.csv', '#lambda_{1} perturbativity', 'l'),
-    Dataset('plotonly/higgs_searches.csv', 'H#rightarrow WW/H#rightarrow ZZ', 'l'),
+    Dataset('plotonly/higgs_searches.csv', 'H #rightarrow WW/H #rightarrow ZZ', 'l'),
 ]
 
 
