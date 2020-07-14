@@ -13,7 +13,8 @@ Dataset = namedtuple('Dataset', ['csv', 'legend', 'style'])
 datasets = [
     Dataset('csv/ATL_comb.csv', 'h_{125} (ATLAS)', 'l'),
     Dataset('csv/HIG-17-031-observed.csv', 'h_{125} (CMS)', 'l'),
-    Dataset('csv/ATL_ditau.csv', 'A/H #rightarrow #tau#tau (ATLAS)', 'f'),
+    # Dataset('csv/ATL_ditau.csv', 'A/H #rightarrow #tau#tau (ATLAS)', 'f'),
+    Dataset('csv/ATL_ditau_new.csv', 'A/H #rightarrow #tau#tau (ATLAS)', 'f'),
     Dataset('csv/HIG-17-020-observed_new.csv', 'A/H #rightarrow #tau#tau (CMS)', 'f'),
     # Dataset('csv/HIG-18-023-observed.csv', 'A #rightarrow Zh (CMS)', 'f'),
     # Dataset('csv/ATL-HIG-2016-11-observed.csv', 'H^{+} #rightarrow #tau#nu (ATLAS)', 'f'),
@@ -38,7 +39,7 @@ def create_canvas():
     return canv
 
 def draw_frame(canv):
-    hr = canv.DrawFrame(130., 1., 1800., 60.);
+    hr = canv.DrawFrame(130., 1., 2000., 60.);
     # format x axis
     hr.SetXTitle("m_{A} [GeV]")
     hr.GetXaxis().SetLabelFont(42)
@@ -97,7 +98,7 @@ if __name__ == '__main__':
         for style in dataset.style:
             graph.Draw(style+'same')
         graphs.append(graph) # so ROOT doesn't delete it
-    legend = ROOT.TLegend(0.66, 0.14, 0.95, 0.72)
+    legend = ROOT.TLegend(0.72, 0.14, 0.995, 0.72)
     legend.SetBorderSize(0)
     legend.SetFillStyle (0)
     # legend.SetTextSize(0.019)
