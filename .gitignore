@@ -1,0 +1,8 @@
+*.pdf
+*.png
+*.rcm
+*.eps
+*.dat
+*.gnu
+*.pcm
+.DS_store
