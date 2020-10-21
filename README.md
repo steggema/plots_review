@@ -1,6 +1,6 @@
-# Plot scripts for review article "Extended scalar sectors"
+# Plot scripts for review article "Extended scalar sectors" https://www.annualreviews.org/doi/abs/10.1146/annurev-nucl-032620-043846
 
-Each script creates a plot summarising limits from different searches, with the raw data available in according subdirectories, either obtained from experimental collaborations or from phenomenologists directly, or using WebPlotDigitizer when needed.
+Each script creates a plot summarising limits from different searches, with the raw data available in according subdirectories, either obtained from experimental collaborations or from phenomenologists directly, or using https://automeris.io/WebPlotDigitizer/ when needed.
 
 * `plot_hmssm.py`: Limits in hMSSM interpretation
 * `plot_2hdms.py`: Limits for 2HDM+S interpretation, type II and tan(beta) = 2.
@@ -12,5 +12,5 @@ Requires a reasonably recent version of [ROOT](https://ph-root-2.cern.ch/) compi
 
 ### License/Usage
 
-Usage of code is allowed under
-[CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/legalcode) license: please cite the review article above.
+Usage of code subject to
+[CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/legalcode) license: please cite the review article https://www.annualreviews.org/doi/abs/10.1146/annurev-nucl-032620-043846.
