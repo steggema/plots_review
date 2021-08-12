@@ -20,7 +20,8 @@ datasets = [
     # Dataset('csv/ATL-HIG-2016-11-observed.csv', 'H^{+} #rightarrow #tau#nu (ATLAS)', 'f'),
     Dataset('csv/ATL-HDBS-2018-58-observed.csv', 'H #rightarrow hh (ATLAS)', 'f'),
     Dataset('csv/HIG-17-033-observed.csv', 'H #rightarrow WW (CMS)', 'f'),
-    Dataset('csv/ATL-HIGG-2017-04-observed.csv', 'H^{+} #rightarrow tb (ATLAS)', 'f'),
+    # Dataset('csv/ATL-HIGG-2017-04-observed.csv', 'H^{+} #rightarrow tb (ATLAS)', 'f'),
+    Dataset('csv/ATL-HDBS-2018-51-observed.csv', 'H^{+} #rightarrow tb (ATLAS)', 'f'),
     Dataset('csv/HIG-17-027-observed.csv', 'A/H #rightarrow t#bar{t} (CMS)', 'f'),
 
 ]
